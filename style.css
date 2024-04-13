@@ -96,3 +96,16 @@ form, .text-input-compartment,.other-input-compartment{
     scale: 2;
     z-index: 999;
 }
+
+@media screen and (max-width: 768px) {
+    .form-container{
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .form{
+        padding: 10px;
+        bottom: 0;
+    }
+    
+}
