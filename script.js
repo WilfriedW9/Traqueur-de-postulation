@@ -17,7 +17,3 @@ class Candidature {
     this.technologies = technologies;
   }
 }
-
-const candidatureTest = new Candidature("helloWork", "11/11/11", true, "3", "Dev front end", "intégrateur", "HTML/CSS/JS")
-
-console.log(candidatureTest)
