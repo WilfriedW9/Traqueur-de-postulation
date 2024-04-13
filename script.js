@@ -1,38 +1,38 @@
 class Candidature {
   constructor(
     nomEntreprise,
+    technologies,
+    siteInternet,
     date,
-    reponse,
-    interet,
     poste,
+    interet,
     posteDesc,
-    technologies
+    reponse
   ) {
     this.nomEntreprise = nomEntreprise;
     this.date = date;
-    this.reponse = reponse;
+    this.reponse = false;
     this.interet = interet;
     this.poste = poste;
     this.posteDesc = posteDesc;
     this.technologies = technologies;
+    this.siteInternet = siteInternet;
   }
 }
 
-const submitBtn = document.querySelector("#formSubmit")
-const form = document.querySelector("form")
-const formInputs = form.elements
-
-const formData = new FormData(form, submitBtn)
+const form = document.querySelector("form");
+const formInputs = form.elements;
 
 // console.log([...form.elements])
+const database = [];
 
-
-submitBtn.addEventListener("click",(e)=> {
-    for(let i = 0; i< [...form.elements].length-1; i++){
-        console.log([...form.elements][i].name)
-        console.log([...form.elements][i].value)
-    }
-    const candidature = new Candidature()
-    form.reset()
-e.preventDefault()
-})
+form.addEventListener("submit", (e) => {
+  const formData = new FormData(form);
+  const formValues = [];
+  for (const [key, value] of formData) {
+    formValues.push(value);
+  }
+  const candidature = new Candidature(...formValues);
+  form.reset();
+  e.preventDefault();
+});
