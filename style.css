@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(87, 97, 106);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board{
+    border: 3px solid white;
+    height: 10rem;
+    width: 10rem;
+}
