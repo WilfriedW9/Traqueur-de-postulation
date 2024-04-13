@@ -33,6 +33,15 @@ form.addEventListener("submit", (e) => {
     formValues.push(value);
   }
   const candidature = new Candidature(...formValues);
+  database.push(candidature)
+  console.log(database)
   form.reset();
   e.preventDefault();
 });
+
+const formToggleBtn = document.querySelector("#toggleForm")
+
+formToggleBtn.addEventListener("click", (e)=> {
+    form.classList.toggle("hidden")
+    form.classList.contains("hidden") ? formToggleBtn.innerText = "+" : formToggleBtn.innerText = "-"
+})

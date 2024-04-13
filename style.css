@@ -14,6 +14,12 @@ body{
     width: 10rem;
 }
 
+.hidden{
+    visibility: hidden;
+    height: 0px;
+    padding: 0px;
+}
+
 form {
 
     background-color: grey;
