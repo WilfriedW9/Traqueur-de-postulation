@@ -17,3 +17,11 @@ class Candidature {
     this.technologies = technologies;
   }
 }
+
+const submitBtn = document.querySelector("#formSubmit")
+const form = document.querySelector("form")
+
+submitBtn.addEventListener("click",(e)=> {
+    console.log(form.form)
+e.preventDefault()
+})

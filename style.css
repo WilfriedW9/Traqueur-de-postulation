@@ -13,3 +13,40 @@ body{
     height: 10rem;
     width: 10rem;
 }
+
+form {
+
+    background-color: grey;
+    padding: 2rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+label {
+    color: white;
+}
+
+#formSubmit{
+    width: fit;
+}
+
+.form-container {
+    gap: 1rem;
+        background-color: grey;
+    padding: 2rem;
+}
+
+form, .form-container,.text-input-compartment,.other-input-compartment {
+    display: flex;
+}
+
+form, .text-input-compartment,.other-input-compartment{
+    flex-direction: column;
+    gap: 5px;
+}
+
+::placeholder{
+    opacity: 0.4;
+}

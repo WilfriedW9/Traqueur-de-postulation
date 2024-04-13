@@ -9,19 +9,25 @@
   </head>
   <body>
     <form>
-      <input 
-      type="text" 
-      name="nomEntreprise" 
-      id="" />
-      <input 
-      type="text" 
-      name="posteDesc" 
-      id="" />
-      <input
-        type="text"
-        name="technologies"
-        id=""
-      />
+      <div class="form-container">
+          <div class="text-input-compartment">
+            <label for="nomEntreprise"> Nom de l'entreprise:</label>
+            <input type="text" name="nomEntreprise" id="nomEntreprise" />
+            <label for="technologies"> Stack:</label>
+            <input type="text" name="technologies" id="technologies" placeholder="JS, C++, SQL, PHP..."/>
+          </div>
+          <div class="other-input-compartment">
+            <label for="date"> Date de la postulation:</label>
+            <input type="date" name="date" id="date" />
+            <label for="titrePoste"> Poste:</label>
+            <input type="text" name="titrePoste" id="titrePoste" placeholder="Front/Back/FS/Autre"/>
+            <label for="interet"> Intérêt:</label>
+            <input type="number" name="interet" id="interet"  placeholder="1~10" min="1" max="10"/>
+          </div>
+      </div>
+      <label for="posteDesc"> Description du poste:</label>
+      <textarea name="posteDesc" id="posteDesc" cols="30" rows="5" placeholder="Bla bla bla..."></textarea>
+      <button type="submit" id="formSubmit">Ajout candidature</button>
     </form>
     <div class="board"></div>
   </body>
