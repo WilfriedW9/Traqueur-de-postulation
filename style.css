@@ -1,17 +1,22 @@
 body{
     margin: 0;
-    height: 100vh;
+
     background-color: rgb(87, 97, 106);
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
 .board{
+    flex-direction: column;
     border: 3px solid white;
-    height: 10rem;
+    height: fit-content;
     width: 10rem;
+    gap: 5px;
+}
+
+.element:nth-child(2n) {
+    background-color: rgb(212, 153, 163);
 }
 
 .hidden{
@@ -40,11 +45,11 @@ label {
 
 .form-container {
     gap: 1rem;
-        background-color: grey;
+    background-color: grey;
     padding: 2rem;
 }
 
-form, .form-container,.text-input-compartment,.other-input-compartment {
+body, form, .form-container,.text-input-compartment,.other-input-compartment, .board {
     display: flex;
 }
 
@@ -55,4 +60,11 @@ form, .text-input-compartment,.other-input-compartment{
 
 ::placeholder{
     opacity: 0.4;
+}
+
+.element {
+    height: 30px;
+    width: 30px;
+    background-color: pink;
+    display: flex;
 }

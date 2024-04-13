@@ -19,29 +19,38 @@ class Candidature {
     this.siteInternet = siteInternet;
   }
 }
-
+const candidatureCount = document.querySelector("#candidatureCount");
 const form = document.querySelector("form");
-const formInputs = form.elements;
-
-// console.log([...form.elements])
 const database = [];
 
 form.addEventListener("submit", (e) => {
+  e.preventDefault();
   const formData = new FormData(form);
   const formValues = [];
   for (const [key, value] of formData) {
     formValues.push(value);
   }
   const candidature = new Candidature(...formValues);
-  database.push(candidature)
-  console.log(database)
-  form.reset();
-  e.preventDefault();
+  database.push(candidature);
+  console.log(database);
+  ajouterCandidature() 
+  
+});
+const board = document.querySelector(".board");
+
+const formToggleBtn = document.querySelector("#toggleForm");
+
+formToggleBtn.addEventListener("click", (e) => {
+  form.classList.toggle("hidden");
+  form.classList.contains("hidden")
+    ? (formToggleBtn.innerText = "+")
+    : (formToggleBtn.innerText = "-");
 });
 
-const formToggleBtn = document.querySelector("#toggleForm")
-
-formToggleBtn.addEventListener("click", (e)=> {
-    form.classList.toggle("hidden")
-    form.classList.contains("hidden") ? formToggleBtn.innerText = "+" : formToggleBtn.innerText = "-"
-})
+function ajouterCandidature() {
+  candidatureCount.innerText = database.length
+  const newElement = document.createElement("div");
+  newElement.className = "element"
+  board.appendChild(newElement)
+  form.reset();
+}
