@@ -10,16 +10,13 @@ body{
 }
 
 .board{
-    flex-direction: column;
+    display: grid;
     border: 3px solid white;
     height: fit-content;
     width: 10rem;
-    gap: 5px;
 }
 
-.element:nth-child(2n) {
-    background-color: rgb(212, 153, 163);
-}
+
 
 .hidden{
     visibility: hidden;
@@ -68,7 +65,7 @@ label {
     padding: 2rem;
 }
 
-body, form, .form-container,.text-input-compartment,.other-input-compartment, .board {
+body, form, .form-container,.text-input-compartment,.other-input-compartment{
     display: flex;
 }
 
@@ -86,6 +83,10 @@ form, .text-input-compartment,.other-input-compartment{
     width: 30px;
     background-color: pink;
     display: flex;
+}
+
+.element:nth-child(2n) {
+    filter: brightness(0.9);
 }
 
 #toggleForm{
