@@ -1,0 +1,16 @@
+{
+  "name": "traqueur-de-postulation",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "demo_create_db.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^3.9.4"
+  }
+}
