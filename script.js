@@ -50,7 +50,29 @@ formToggleBtn.addEventListener("click", (e) => {
 function ajouterCandidature() {
   candidatureCount.innerText = database.length
   const newElement = document.createElement("div");
+  const deleteBtn = document.createElement("button")
+  deleteBtn.className = "deleteCandidature"
+  deleteBtn.innerText = "X"
   newElement.className = "row"
+  newElement.insertAdjacentHTML("beforeend", `
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  `)
+  newElement.appendChild(deleteBtn)
   board.appendChild(newElement)
   form.reset();
 }
+
+board.addEventListener("click", (e)=> {
+  if(e.target.className === "deleteCandidature"){
+    database.pop()
+    e.target.parentElement.remove()
+    console.log(database)
+    candidatureCount.innerText = database.length
+  }
+})
