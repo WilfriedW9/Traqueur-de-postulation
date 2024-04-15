@@ -24,11 +24,30 @@ async function getCandidature(id){
     FROM ctracker1.candidature
     WHERE CandidatureID = ?
     `, [id])
-    return rows
+    return rows[0]
 }
 
-const candidatures =  await getCandidature(1)
+async function createCandidature(nomEntreprise,Stack,SiteInternet,Date,Poste, Interet,PosteDesc){
+    const result = await connection.query(`
+    INSERT INTO ctracker1.candidature (nomEntreprise,Stack,SiteInternet,Date,Poste, Interet,PosteDesc)
+    VALUES (?,?,?,?,?,?,?)
+    `,[nomEntreprise,Stack,SiteInternet,Date,Poste, Interet,PosteDesc])
+    return result.insertId
+}
 
+async function deleteCandidature(id){
+    const [rows] = await connection.query(`
+    DELETE  
+    FROM ctracker1.candidature
+    WHERE CandidatureID = ?
+    `, [id])
+    return rows[0] + "has been deleted from the database"
+}
+
+const candidatures =  await getCandidatures()
+const candidature =  await getCandidature(1)
+// const result = await deleteCandidature(3)
+// console.log(result)
 console.log(candidatures)
 
 
