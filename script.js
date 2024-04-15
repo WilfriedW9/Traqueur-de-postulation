@@ -50,7 +50,7 @@ formToggleBtn.addEventListener("click", (e) => {
 function ajouterCandidature() {
   candidatureCount.innerText = database.length
   const newElement = document.createElement("div");
-  newElement.className = "element"
+  newElement.className = "row"
   board.appendChild(newElement)
   form.reset();
 }

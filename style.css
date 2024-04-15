@@ -10,11 +10,28 @@ body{
 }
 
 .board{
+    
+}
+
+.row{
     display: grid;
-    border: 3px solid white;
+    border: 2px solid white;
     height: fit-content;
-    width: 10rem;
-    grid-template-columns: 7fr;
+    width: fit-content;
+    grid-template-columns: repeat(7, 10rem) 30px;
+    color: white;
+    word-wrap: break-word;
+    text-align: center;
+    margin: 5px 0;
+    background-color: rgb(214, 194, 197);
+}
+
+.row:nth-child(2n) {
+    filter: brightness(0.9);
+}
+
+.row> div:not(:last-child) {
+    border-right: 2px solid white ;
 }
 
 
@@ -31,7 +48,7 @@ h2 {
 
 form {
     opacity: 0.3;
-
+    z-index: 999;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -79,17 +96,6 @@ form, .text-input-compartment,.other-input-compartment{
     opacity: 0.4;
 }
 
-.element {
-    height: 30px;
-    width: 30px;
-    background-color: pink;
-    display: flex;
-}
-
-.element:nth-child(2n) {
-    filter: brightness(0.9);
-}
-
 #toggleForm{
     display: flex;
     height: 2rem;
@@ -114,6 +120,12 @@ form, .text-input-compartment,.other-input-compartment{
     .form{
         padding: 10px;
         bottom: 0;
+    }  
+}
+
+@media screen and (max-width: 1500px) {
+    .row{
+        grid-template-columns: repeat(7, 6rem) 30px;
     }
     
 }
