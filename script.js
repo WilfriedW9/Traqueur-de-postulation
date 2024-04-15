@@ -68,6 +68,8 @@ function ajouterCandidature() {
   form.reset();
 }
 
+
+// TODO: Mettre en place la suppression spécifique des candidatures par ID
 board.addEventListener("click", (e)=> {
   if(e.target.className === "deleteCandidature"){
     database.pop()

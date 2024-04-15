@@ -13,6 +13,8 @@ body{
     
 }
 
+
+
 .row{
     display: grid;
     border: 2px solid white;
@@ -25,6 +27,10 @@ body{
     margin: 5px 0;
     background-color: rgb(214, 194, 197);
 }
+.row:first-child{
+    grid-template-columns: repeat(7, 10rem);
+}
+
 
 .row:nth-child(2n) {
     filter: brightness(0.9);
@@ -128,4 +134,7 @@ form, .text-input-compartment,.other-input-compartment{
         grid-template-columns: repeat(7, 6rem) 30px;
     }
     
+    .row:first-child{
+        grid-template-columns: repeat(7, 6rem);
+    }
 }
