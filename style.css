@@ -19,8 +19,28 @@ body{
     word-wrap: break-word;
     text-align: center;
     margin: 5px 0;
-    background-color: rgb(214, 194, 197);
+    background-color: rgb(226, 179, 186);
+    animation: appear-row 0.15s ;
 }
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 0.3
+    }
+}
+@keyframes appear-row {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1
+    }
+}
+
+
 .row:first-child{
     grid-template-columns: repeat(7, 10rem);
 }
@@ -36,11 +56,7 @@ body{
 
 
 
-.hidden{
-    visibility: hidden;
-    height: 0px;
-    padding: 0px;
-}
+
 
 h2 {
     color: white;
@@ -55,14 +71,24 @@ form {
     background-color: grey;
     padding: 2rem;
     border-radius: 5%;
-    transition: opacity 0.15s;
+}
+
+.visible {
+    animation: appear 0.15s ;
 }
 
 form:hover {
     opacity: 1;
     cursor: pointer;
+    transition: 0.15s;
 }
 
+.hidden{
+    visibility: hidden;
+    height: 0px;
+    padding: 0px;
+    animation: disappear 1s;
+}
 
 
 button:hover {
