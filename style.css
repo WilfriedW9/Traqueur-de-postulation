@@ -9,12 +9,6 @@ body{
     font-optical-sizing: auto;
 }
 
-.board{
-    
-}
-
-
-
 .row{
     display: grid;
     border: 2px solid white;
