@@ -7,7 +7,8 @@ class Candidature {
     poste,
     interet,
     posteDesc,
-    reponse
+    reponse,
+    candidatureID
   ) {
     this.nomEntreprise = nomEntreprise;
     this.date = date;
