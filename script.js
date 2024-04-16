@@ -1,3 +1,10 @@
+// Récupération élémenents DOM
+const board = document.querySelector(".board");
+const formToggleBtn = document.querySelector("#toggleForm");
+const candidatureCount = document.querySelector("#candidatureCount");
+const form = document.querySelector("form");
+
+// Model candidature
 class Candidature {
   constructor(
     nomEntreprise,
@@ -20,9 +27,13 @@ class Candidature {
     this.siteInternet = siteInternet;
   }
 }
-const candidatureCount = document.querySelector("#candidatureCount");
-const form = document.querySelector("form");
+
+
 const database = [];
+
+database.forEach((candidature) => {
+  ajouterCandidature()
+})
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -37,9 +48,7 @@ form.addEventListener("submit", (e) => {
   ajouterCandidature() 
   
 });
-const board = document.querySelector(".board");
 
-const formToggleBtn = document.querySelector("#toggleForm");
 
 formToggleBtn.addEventListener("click", (e) => {
   form.classList.toggle("hidden");
