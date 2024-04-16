@@ -1,6 +1,3 @@
-const testExports ="strign de test pour voir si ca fonctionne"
-
-
 // Récupération élémenents DOM
 const board = document.querySelector(".board");
 const formToggleBtn = document.querySelector("#toggleForm");
@@ -32,7 +29,7 @@ class Candidature {
 }
 
 
-const database = [1,2,3,4];
+const database = [];
 
 database.forEach((candidature) => {
   ajouterCandidature()
