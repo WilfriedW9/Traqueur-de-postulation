@@ -7,7 +7,8 @@ class Candidature {
     poste,
     interet,
     posteDesc,
-    reponse
+    reponse,
+    candidatureID
   ) {
     this.nomEntreprise = nomEntreprise;
     this.date = date;
@@ -42,6 +43,7 @@ const formToggleBtn = document.querySelector("#toggleForm");
 
 formToggleBtn.addEventListener("click", (e) => {
   form.classList.toggle("hidden");
+  form.classList.toggle("visible");
   form.classList.contains("hidden")
     ? (formToggleBtn.innerText = "+")
     : (formToggleBtn.innerText = "-");

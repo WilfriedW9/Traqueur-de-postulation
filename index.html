@@ -75,8 +75,19 @@
         Ajout candidature
       </button>
     </form>
-    <h2>Nombre de candidatures : <span id="candidatureCount"></span></h2>
+    <div class="header">
+      <h2>Nombre de candidatures : <span id="candidatureCount"></span></h2>
+    </div>
     <!-- Grille à 7 colonnes  -->
+    <div class="filtre">
+      <label for="trier">Filtrer:</label>
+      <select name="trier" id="trier">
+        <option value="interet">A-Z</option>
+        <option value="interet">Date</option>
+        <option value="interet">Poste</option>
+        <option value="interet">Intérêt</option>
+      </select>
+    </div>
     <div class="board">
       <div class="row">
             <div>Nom Entreprise</div>
