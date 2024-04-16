@@ -1,3 +1,4 @@
+
 // Ce fichier sert a établir une connexion entre mySql et Node
 import mysql from "mysql2"
 import dotenv from "dotenv"

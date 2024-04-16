@@ -1,9 +1,10 @@
 import express from "express";
 import fs from "fs"
 import path from "path"
+import database from "./database.js"
 const app = express();
 
-// respond with "hello world" when a GET request is made to the homepage
+// Affiche la page HTML indiquée en argument de readFile(), avec ses métadonnées
 app.get("/", (req, res) => {
   fs.readFile("./index.html", "utf8", (err,html) => {
     if(err){

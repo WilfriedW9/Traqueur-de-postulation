@@ -29,7 +29,7 @@ body{
     word-wrap: break-word;
     text-align: center;
     margin: 5px 0;
-    background-color: rgb(226, 179, 186);
+    background-color: rgb(95, 161, 183);
     animation: appear-row 0.15s ;
 }
 
@@ -57,7 +57,7 @@ body{
 
 
 .row:nth-child(2n) {
-    filter: brightness(0.9);
+    filter: brightness(0.8);
 }
 
 .row> div:not(:last-child) {
@@ -147,7 +147,7 @@ form, .text-input-compartment,.other-input-compartment{
     z-index: 999;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     .form-container{
         flex-direction: column;
         padding: 10px;
