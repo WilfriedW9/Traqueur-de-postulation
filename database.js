@@ -2,6 +2,10 @@
 import mysql from "mysql2"
 import dotenv from "dotenv"
 
+app.listen(3006, ()=> {
+    console.log("server is running on port 3006")
+})
+
 
 dotenv.config()
 
