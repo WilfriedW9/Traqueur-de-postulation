@@ -1,23 +1,82 @@
 class Candidature {
   constructor(
     nomEntreprise,
+    technologies,
+    siteInternet,
     date,
-    reponse,
-    interet,
     poste,
+    interet,
     posteDesc,
-    technologies
+    reponse
   ) {
     this.nomEntreprise = nomEntreprise;
     this.date = date;
-    this.reponse = reponse;
+    this.reponse = false;
     this.interet = interet;
     this.poste = poste;
     this.posteDesc = posteDesc;
     this.technologies = technologies;
+    this.siteInternet = siteInternet;
   }
 }
+const candidatureCount = document.querySelector("#candidatureCount");
+const form = document.querySelector("form");
+const database = [];
 
-const candidatureTest = new Candidature("helloWork", "11/11/11", true, "3", "Dev front end", "intégrateur", "HTML/CSS/JS")
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const formValues = [];
+  for (const [key, value] of formData) {
+    formValues.push(value);
+  }
+  const candidature = new Candidature(...formValues);
+  database.push(candidature);
+  console.log(database);
+  ajouterCandidature() 
+  
+});
+const board = document.querySelector(".board");
 
-console.log(candidatureTest)
+const formToggleBtn = document.querySelector("#toggleForm");
+
+formToggleBtn.addEventListener("click", (e) => {
+  form.classList.toggle("hidden");
+  form.classList.contains("hidden")
+    ? (formToggleBtn.innerText = "+")
+    : (formToggleBtn.innerText = "-");
+});
+
+function ajouterCandidature() {
+  candidatureCount.innerText = database.length
+  const derniereCandidature = database[database.length-1]
+  const newElement = document.createElement("div");
+  const deleteBtn = document.createElement("button")
+  deleteBtn.className = "deleteCandidature"
+  deleteBtn.innerText = "X"
+  newElement.className = "row"
+  newElement.insertAdjacentHTML("beforeend", `
+  <div>${derniereCandidature.nomEntreprise}</div>
+  <div>${derniereCandidature.technologies}</div>
+  <div>${derniereCandidature.siteInternet}</div>
+  <div>${derniereCandidature.date}</div>
+  <div>${derniereCandidature.poste}</div>
+  <div>${derniereCandidature.interet}</div>
+  <div>${derniereCandidature.posteDesc}</div>
+
+  `)
+  newElement.appendChild(deleteBtn)
+  board.appendChild(newElement)
+  form.reset();
+}
+
+
+// TODO: Mettre en place la suppression spécifique des candidatures par ID
+board.addEventListener("click", (e)=> {
+  if(e.target.className === "deleteCandidature"){
+    database.pop()
+    e.target.parentElement.remove()
+    console.log(database)
+    candidatureCount.innerText = database.length
+  }
+})
