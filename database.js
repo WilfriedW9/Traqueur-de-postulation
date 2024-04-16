@@ -1,7 +1,10 @@
 // Ce fichier sert a établir une connexion entre mySql et Node
 import mysql from "mysql2"
 import dotenv from "dotenv"
+
+
 dotenv.config()
+
 
 const connection = mysql.createConnection({
     host: process.env.MYSQL_HOST,
@@ -48,7 +51,10 @@ const candidatures =  await getCandidatures()
 const candidature =  await getCandidature(1)
 // const result = await deleteCandidature(3)
 // console.log(result)
+
 console.log(candidatures)
+
+
 
 
 
